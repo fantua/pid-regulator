@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="vendor/Chart.min.js"></script>
+    <script src="vendor/jquery-2.1.4.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+        label {
+            /*display: block;*/
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <p>Configuration: </p>
+    <form id="config">
+        <label>Kp: <input type="number" id="kp" step="0.1" required></label>
+        <label>Ki: <input type="number" id="ki" step="0.001" required></label>
+        <label>Kd: <input type="number" id="kd" step="0.1" required></label>
+        <label>Loop timeout: <input type="number" id="timeout" required></label>
+        <button>Save</button>
+    </form>
+</div>
+
+<br>
+
+<canvas id="chart" width="800" height="400"></canvas>
+<button id="stop">Stop</button>
+<button id="start">Start</button>
+
+<br>
+
+<form id="regulator">
+    <label>Current value: <input type="number" id="current" value="0" disabled></label>
+    <!--<label>Set custom value: <input type="number" id="custom" min="0" value="10" required></label>-->
+    <label>Set custom value: <input type="range" id="custom" min="0" max="100" value="10" required> <span id="custom-val">10</span></label>
+</form>
+
+</body>
+</html>
